@@ -36,8 +36,7 @@
     <script>
       function transformar() {
         var nome = document.forms["transformador"]["nomeCompleto"].value; //RECEBE O VALOR DIGITADO NO CAMPO NOME COMPLETO
-        console.log("nome completo: "+ nome);
-                
+                        
         if (nome == "") {
           alert("Há valores não preenchidos");
           return false;
@@ -45,29 +44,21 @@
         
         var vetorNome = [];
         vetorNome = nome.split(" "); //CRIANDO UM VETOR PARA RECEBER O NOME COMPLETO, CADA ARRAY RECEBE UMA PALAVRA
-        console.log("vetorNome: " + vetorNome);
-        
+               
         var primeiroNome = vetorNome[0]; //STRING primeiroNome RECEBE A PRIMEIRA PALAVRA
-        console.log("primeiroNome: " + primeiroNome);
-        
+                
         var i = vetorNome.length -1; //STRING ultimoNome RECEBE A ULTIMA PALAVRA
         var ultimoNome = vetorNome[i]; 
-        console.log("ultimoNome: " +ultimoNome);
-        
+                
         var nomesDoMeio = vetorNome.slice(1,i); //CRIANDO UM VETOR COM OS NOMES DO MEIO
-        console.log("nomesDoMeio: " + nomesDoMeio);
-        
+                
         for (i = 0; i < nomesDoMeio.length; i++) { //SUBSTITUINDO OS NOMES DO MEIO PELA INICIAL
             var temp = nomesDoMeio[i].split("");
-            console.log("temp: " + temp)
-            nomesDoMeio[i] = temp[0];
-            console.log("nomes do meio: " + nomesDoMeio)
+            nomesDoMeio[i] = temp[0];            
         }
 
         //JUNTA TUDO
-        var notacaoAbnt = ultimoNome.toUpperCase() + ", " + primeiroNome + " " + nomesDoMeio.join(" ");
-        console.log(notacaoAbnt);
-        
+        var notacaoAbnt = ultimoNome.toUpperCase() + ", " + primeiroNome + " " + nomesDoMeio.join(" ");    
         
         document.forms["transformador"]["notacaoAbnt"].value = notacaoAbnt;
       }
