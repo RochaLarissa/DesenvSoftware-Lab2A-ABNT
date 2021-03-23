@@ -36,6 +36,7 @@
     <script>
       function transformar() {
         var nome = document.forms["transformador"]["nomeCompleto"].value; //RECEBE O VALOR DIGITADO NO CAMPO NOME COMPLETO
+        nome = nome.trim();
                         
         if (nome == "") {
           alert("Há valores não preenchidos");
@@ -43,7 +44,7 @@
         }
         
         var vetorNome = [];
-        vetorNome = nome.trim().split(" "); //CRIANDO UM VETOR PARA RECEBER O NOME COMPLETO, CADA ARRAY RECEBE UMA PALAVRA
+        vetorNome = nome.split(" "); //CRIANDO UM VETOR PARA RECEBER O NOME COMPLETO, CADA ARRAY RECEBE UMA PALAVRA
                
         var primeiroNome = vetorNome[0]; //STRING primeiroNome RECEBE A PRIMEIRA PALAVRA
                 
